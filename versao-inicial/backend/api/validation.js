@@ -18,5 +18,9 @@ module.exports = app => {
         if (valueA !== valueB) throw msg
     }
 
-    return { existsOrError, notExistsOrError, equalsOrError }
+    function maxLengthOrError(value, msg) {
+        if (value.length > 120) throw msg
+    }
+
+    return { existsOrError, notExistsOrError, equalsOrError, maxLengthOrError }
 }
